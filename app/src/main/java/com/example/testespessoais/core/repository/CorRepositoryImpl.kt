@@ -21,12 +21,20 @@ class CorRepositoryImpl(appDataBase: AppDataBase) : CorRepository {
 
     override suspend fun getRandomColor(): CorItem {
         val corLista = dao.getAllCores()
-        val cor = corLista.random()
-        val corItem = CorItem(
-            nomeCor = cor.nomeCor,
-            hexCor = cor.hexCor,
-            idCor = cor.uuid.toString()
+        var corItem = CorItem(
+            idCor = UUID.randomUUID().toString(),
+            nomeCor = "Preto",
+            hexCor = "#000000"
         )
+        if (!corLista.isNullOrEmpty()) {
+
+            val cor = corLista.random()
+            corItem = CorItem(
+                nomeCor = cor.nomeCor,
+                hexCor = cor.hexCor,
+                idCor = cor.uuid.toString()
+            )
+        }
         return corItem
     }
 

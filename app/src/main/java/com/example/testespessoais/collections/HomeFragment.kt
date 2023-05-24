@@ -36,9 +36,10 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel: HomeViewModel by activityViewModels {
-        val repositoryCor : CorRepository = CorRepositoryImpl(appDataBase = AppDataBase.getInstance(requireContext()))
-        val getCoresUseCase : GetCoresUseCase = GetCoresUseCaseImpl(repositoryCor)
-        HomeViewModel.Factory(getCoresUseCase,repositoryCor)
+        val repositoryCor: CorRepository =
+            CorRepositoryImpl(appDataBase = AppDataBase.getInstance(requireContext()))
+        val getCoresUseCase: GetCoresUseCase = GetCoresUseCaseImpl(repositoryCor)
+        HomeViewModel.Factory(getCoresUseCase, repositoryCor)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,7 +55,7 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentHomeBinding.inflate(inflater,container,false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -64,14 +65,14 @@ class HomeFragment : Fragment() {
 
         viewModel
             .uiState()
-            .observe(viewLifecycleOwner){state ->
-            binding.nomeCor.text = state.valorCor.nomeCor
-            val color: Int = Color.parseColor(state.valorCor.hexCor)
-            binding.raio.setColorFilter(color)
-        }
+            .observe(viewLifecycleOwner) { state ->
+                binding.nomeCor.text = state.valorCor.nomeCor
+                val color: Int = Color.parseColor(state.valorCor.hexCor)
+                binding.raio.setColorFilter(color)
+            }
 
         binding.mudarCor.setOnClickListener(View.OnClickListener {
-           val corrotina = MainScope()
+            val corrotina = MainScope()
             corrotina.async { viewModel.mudarCor() }
         })
         binding.cadastrarNovaCorHome.setOnClickListener(View.OnClickListener {
