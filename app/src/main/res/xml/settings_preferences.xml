@@ -1,0 +1,20 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <SwitchPreferenceCompat
+        app:key="notification"
+        app:title="@string/notification_title"
+        app:summaryOff="@string/notification_summary_off"
+        app:summaryOn="@string/notification_summary_on" />
+
+    <SwitchPreferenceCompat
+        app:key="emailNews"
+        app:summaryOff="@string/news_summary_off"
+        app:summaryOn="@string/news_summary_on"
+        app:title="@string/send_news" />
+
+    <EditTextPreference
+        app:key="emailText"
+        app:title="@string/email_contact"
+        app:useSimpleSummaryProvider="true" />
+
+</PreferenceScreen>

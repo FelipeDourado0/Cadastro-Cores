@@ -2,4 +2,20 @@
     <string name="app_name">TestesPessoais</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="email_contact">Email de contato</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="send_news">Enviar notificações de atualizações?</string>
+    <string name="news_summary_on">Atualizações por e-mail ativadas</string>
+    <string name="news_summary_off">Atualizações por e-mail desativadas :(</string>
+    <string name="notification_title">Notificações</string>
+    <string name="notification_summary_on">Notificações ativadas</string>
+    <string name="notification_summary_off">Notificações desativadas :(</string>
+    <string name="settings_title">Configurações</string>
 </resources>
