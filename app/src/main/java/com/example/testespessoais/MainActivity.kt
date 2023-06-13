@@ -7,7 +7,9 @@ import android.view.MenuItem
 import androidx.navigation.findNavController
 import com.example.testespessoais.R
 import com.example.testespessoais.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
 

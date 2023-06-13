@@ -7,29 +7,33 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.testespessoais.R
 import com.example.testespessoais.core.database.AppDataBase
 import com.example.testespessoais.core.repository.CorRepository
 import com.example.testespessoais.core.repository.CorRepositoryImpl
 import com.example.testespessoais.databinding.FragmentCadastroBinding
+import com.example.testespessoais.di.RepositoyModule
+import com.example.testespessoais.di.RoomModule
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.async
 import java.util.UUID
 
+@AndroidEntryPoint
 class CadastroFragment : Fragment() {
 
     private var _binding: FragmentCadastroBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: CadastroViewModel by activityViewModels {
-        val repositoryCor : CorRepository = CorRepositoryImpl(appDataBase = AppDataBase.getInstance(requireContext()))
-        CadastroViewModel.Factory(repositoryCor)
-    }
+    private lateinit var viewModel: CadastroViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        viewModel = ViewModelProvider(this)[CadastroViewModel::class.java]
     }
 
     override fun onCreateView(

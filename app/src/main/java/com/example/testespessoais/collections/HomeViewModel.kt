@@ -2,10 +2,13 @@ package com.example.testespessoais.collections
 
 import androidx.lifecycle.*
 import com.example.testespessoais.core.repository.CorRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import java.util.UUID
+import javax.inject.Inject
 
-class HomeViewModel(
+@HiltViewModel
+class HomeViewModel @Inject constructor(
     private val getCoresUseCase: GetCoresUseCase,
     private val repository: CorRepository
     ) : ViewModel(){
@@ -48,9 +51,9 @@ class HomeViewModel(
         }
     }
 
-    class Factory(private val getCoresUseCase: GetCoresUseCase, private val repository: CorRepository): ViewModelProvider.Factory{
+    /*class Factory(private val getCoresUseCase: GetCoresUseCase, private val repository: CorRepository): ViewModelProvider.Factory{
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
             return HomeViewModel(getCoresUseCase, repository) as T
         }
-    }
+    }*/
 }

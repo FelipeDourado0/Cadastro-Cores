@@ -9,9 +9,12 @@ import com.example.testespessoais.core.repository.CorRepository
 import kotlinx.coroutines.launch
 import androidx.navigation.fragment.findNavController
 import com.example.testespessoais.core.database.entity.Cor
+import dagger.hilt.android.lifecycle.HiltViewModel
 import java.util.*
+import javax.inject.Inject
 
-class CadastroViewModel(
+@HiltViewModel
+class CadastroViewModel @Inject constructor(
     private val repository: CorRepository
     ) : ViewModel(){
 
@@ -23,11 +26,11 @@ class CadastroViewModel(
     }
 
 
-    class Factory(private val repository: CorRepository): ViewModelProvider.Factory{
+    /*class Factory(private val repository: CorRepository): ViewModelProvider.Factory{
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
             return CadastroViewModel(repository) as T
         }
-    }
+    }*/
 
 
 }
