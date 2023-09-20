@@ -8,6 +8,3 @@
   -  Ciclo de vida (Activity, Fragment e ViewModel)
   -  Repository pattern
   -  Desenvolvimento de telas (XML)
-
-
-
