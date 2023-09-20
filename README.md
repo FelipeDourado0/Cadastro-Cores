@@ -1,4 +1,5 @@
 # Cadastro-Cores
+### Projeto em Android nativo, com o intuito de salvar cores no banco de dados local.
 ### Projeto desenvolvido para colocar em práticas conceitos como:
   -  Coroutines
   -  Navigation Component
@@ -9,4 +10,4 @@
   -  Desenvolvimento de telas (XML)
 
 
-##Projeto em Android nativo, que serve para salvar cores que o usuário goste.
+
