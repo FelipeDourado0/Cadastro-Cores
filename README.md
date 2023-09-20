@@ -7,5 +7,6 @@
   -  Ciclo de vida (Activity, Fragment e ViewModel)
   -  Repository pattern
   -  Desenvolvimento de telas (XML)
-###Projeto em Android nativo, que serve para salvar cores que o usuário goste.
 
+
+##Projeto em Android nativo, que serve para salvar cores que o usuário goste.
